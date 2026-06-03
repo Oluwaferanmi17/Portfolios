@@ -81,7 +81,7 @@ export function HeroSection() {
       aria-label="Hero"
     >
       {/* UnicornStudio background — desktop only */}
-      <div
+      {/* <div
         className="absolute inset-0 w-full h-full hidden lg:block pointer-events-none"
         aria-hidden="true"
       >
@@ -89,7 +89,7 @@ export function HeroSection() {
           data-us-project="whwOGlfJ5Rz2rHaEUgHl"
           style={{ width: "100%", height: "100%", minHeight: "100vh" }}
         />
-      </div>
+      </div> */}
 
       {/* Mobile stars fallback */}
       <div
@@ -117,14 +117,14 @@ export function HeroSection() {
           }}
         >
           {/* Eyebrow */}
-          <div className="flex items-center gap-4 text-[9px] tracking-[0.3em] text-amber-400 uppercase mb-6 animate-[fadeUp_0.6s_0.1s_forwards] opacity-0">
+          <div className="flex items-center gap-4 text-[9px] tracking-[0.3em] text-amber-400 uppercase mb-6 animate-fadeUp">
             PROCESS:INIT
             <span className="text-neutral-700">──</span>
             PORTFOLIO.EXE
           </div>
 
           {/* Name */}
-          <h1 className="font-['Space_Mono',monospace] text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[0.95] tracking-tight text-neutral-100 mb-2 animate-[fadeUp_0.6s_0.2s_forwards] opacity-0">
+          <h1 className="font-['Space_Mono',monospace] text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[0.95] tracking-tight text-neutral-100 mb-2 animate-fadeUp">
             {meta.name.split(" ").map((part, i) =>
               i === meta.name.split(" ").length - 1 ? (
                 <em
@@ -142,17 +142,17 @@ export function HeroSection() {
           </h1>
 
           {/* Role */}
-          <p className="text-[11px] tracking-[0.2em] text-neutral-500 uppercase mb-8 border-l-2 border-amber-400 pl-4 animate-[fadeUp_0.6s_0.3s_forwards] opacity-0">
+          <p className="text-[11px] tracking-[0.2em] text-neutral-500 uppercase mb-8 border-l-2 border-amber-400 pl-4 animate-fadeUp">
             {meta.role}
           </p>
 
           {/* Description */}
-          <p className="text-[12px] leading-[1.9] text-neutral-500 max-w-[420px] mb-10 animate-[fadeUp_0.6s_0.4s_forwards] opacity-0">
+          <p className="text-[12px] leading-[1.9] text-neutral-500 max-w-[420px] mb-10 animate-fadeUp">
             {meta.tagline}
           </p>
 
           {/* CTAs */}
-          <div className="flex gap-4 flex-wrap animate-[fadeUp_0.6s_0.5s_forwards] opacity-0">
+          <div className="flex gap-4 flex-wrap animate-fadeUp">
             <button
               onClick={() => scrollTo("projects")}
               className="font-mono text-[10px] tracking-[0.15em] uppercase px-6 py-3 bg-amber-400 text-black transition-colors duration-150 hover:bg-neutral-100 cursor-pointer border-none"
@@ -169,10 +169,10 @@ export function HeroSection() {
         </div>
 
         {/* Right — stats + terminal */}
-        <div className="flex flex-col justify-between p-8 animate-[fadeUp_0.6s_0.5s_forwards] opacity-0">
+        <div className="flex flex-col justify-between p-8 animate-fadeUp">
           {/* ASCII logo */}
           <pre
-            className="text-[7px] leading-[1.3] tracking-[0.05em] text-white select-none pt-6"
+            className="text-[7px] leading-[1.3] tracking-[0.05em] text-neutral-500 select-none pt-6"
             aria-hidden="true"
           >
             {`  ██████╗  █████╗
