@@ -77,7 +77,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen border-b border-neutral-800 overflow-hidden"
+      className="scanlines relative min-h-screen border-b border-neutral-800 overflow-hidden bg-black"
       aria-label="Hero"
     >
       {/* UnicornStudio background — desktop only */}
@@ -90,6 +90,70 @@ export function HeroSection() {
           style={{ width: "100%", height: "100%", minHeight: "100vh" }}
         />
       </div> */}
+      {/* Cyber Grid Background */}
+      <div
+        className="absolute inset-0 opacity-40 pointer-events-none"
+        aria-hidden="true"
+        style={{
+          backgroundImage: `
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
+    `,
+          backgroundSize: "40px 40px",
+        }}
+      />
+      <pre
+        aria-hidden="true"
+        className="
+    hidden lg:block
+    absolute
+    right-0
+    top-1/2
+    -translate-y-1/2
+    text-[9px]
+    leading-none
+    text-white/5
+    select-none
+    pointer-events-none
+    z-0
+  "
+      >
+        {`
+                     .-=========-.
+                 .-'             '-.
+               .'                   '.
+              /                       \\
+             |      PORTFOLIO.EXE      |
+              \\                       /
+               '.                   .'
+                 '-.___________.-'
+
+                       /\\
+                      /  \\
+                     /----\\
+                    /      \\
+                   /________\\
+
+                  [ DEVELOPER ]
+`}
+      </pre>
+      <div className="hidden lg:block">
+        <span className="absolute top-24 left-24 text-[10px] font-mono text-white/5">
+          git push origin main
+        </span>
+
+        <span className="absolute top-48 right-52 text-[10px] font-mono text-white/5">
+          npm run build
+        </span>
+
+        <span className="absolute bottom-52 left-1/3 text-[10px] font-mono text-white/5">
+          const build = () =&gt; success;
+        </span>
+
+        <span className="absolute bottom-24 right-24 text-[10px] font-mono text-white/5">
+          pnpm install
+        </span>
+      </div>
 
       {/* Mobile stars fallback */}
       <div
@@ -109,7 +173,16 @@ export function HeroSection() {
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 min-h-screen pt-12">
         {/* Left — main content */}
         <div
-          className="border-r border-neutral-800 flex flex-col justify-end p-8 lg:p-12 relative"
+          className="
+border-r
+border-neutral-800
+flex
+flex-col
+justify-center
+p-8
+lg:p-12
+relative
+"
           style={{
             backgroundImage:
               "linear-gradient(rgba(232,168,37,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(232,168,37,0.015) 1px, transparent 1px)",
@@ -171,7 +244,7 @@ export function HeroSection() {
         {/* Right — stats + terminal */}
         <div className="flex flex-col justify-between p-8 animate-fadeUp">
           {/* ASCII logo */}
-          <pre
+          {/* <pre
             className="text-[7px] leading-[1.3] tracking-[0.05em] text-neutral-500 select-none pt-6"
             aria-hidden="true"
           >
@@ -181,7 +254,10 @@ export function HeroSection() {
   ██║   ██║██╔══██║
   ╚██████╔╝██║  ██║
    ╚═════╝ ╚═╝  ╚═╝`}
-          </pre>
+          </pre> */}
+          <div className="font-display text-6xl text-neutral-700 font-bold select-none">
+            OA
+          </div>
 
           {/* Stats grid */}
           <div
@@ -190,7 +266,19 @@ export function HeroSection() {
             aria-label="Quick stats"
           >
             {stats.map((s) => (
-              <div key={s.label} className="bg-[#0a0a0a] p-5" role="listitem">
+              <div
+                key={s.label}
+                className="
+bg-black/60
+backdrop-blur-sm
+p-5
+transition-all
+duration-300
+hover:border-amber-400/20
+hover:shadow-[0_0_30px_rgba(245,158,11,0.05)]
+"
+                role="listitem"
+              >
                 <div className="font-['Space_Mono',monospace] text-3xl font-bold text-neutral-100 leading-none mb-1">
                   {s.value.replace(/[+∞]/, "")}
                   {s.value.includes("+") && (
@@ -227,6 +315,27 @@ export function HeroSection() {
             ))}
           </div>
         </div>
+      </div>
+      <div
+        className="
+    hidden
+    lg:block
+    absolute
+    bottom-10
+    right-10
+    font-mono
+    text-[10px]
+    text-green-500/20
+    space-y-2
+    pointer-events-none
+  "
+      >
+        <div>$ npm run dev</div>
+        <div>[✓] React loaded</div>
+        <div>[✓] TypeScript compiled</div>
+        <div>[✓] Portfolio initialized</div>
+        <div>[✓] Supabase connected</div>
+        <div>[~] Building experience...</div>
       </div>
     </section>
   );

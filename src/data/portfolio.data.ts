@@ -83,53 +83,84 @@ export const aboutText: string[] = [
 
 export const projects: Project[] = [
   {
-    id: "personal-brand",
-    num: "00 — FEATURED",
-    title: "Personal Brand Platform",
-    type: "Full-Stack Web App",
-    description:
-      "A JSON-driven personal brand landing page with analytics event tracking, admin dashboard metrics, dynamic modals, and a no-hardcoding architecture. Built inside a Turbo monorepo with complete test coverage.",
-    stack: ["React", "TypeScript", "Supabase", "Vite", "TailwindCSS", "Turbo"],
-    year: "2025 — In Progress",
-    featured: true,
-    featuredCode: `const brand = {
-  sections: loadJSON('./data'),
-  analytics: track(events),
-  admin: dashboard(metrics),
-  modal: resolve(props),
-};
-
-// Slices 1–19 → shipping.`,
-  },
-  {
     id: "avira",
-    num: "01",
+    num: "00 — FEATURED",
     title: "Avira",
-    type: "Platform Design",
+    type: "Travel & Accommodation Platform",
     description:
-      "Travel & accommodation platform with Guest, Host, and AI Recommendation actor flows. Full system design documentation including UML diagrams, DFDs, and class diagrams.",
-    stack: ["System Design", "UML", "DFD", "AI Rec. Engine"],
-    year: "2024–2025",
+      "A full-stack accommodation and events booking platform featuring guest and host dashboards, booking workflows, property management, and real-time communication.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "MongoDB",
+      "Pusher.js",
+      "TailwindCSS",
+    ],
+    year: "2025",
+    featured: true,
   },
+
   {
-    id: "api-scaffold",
-    num: "02",
-    title: "API Scaffold",
-    type: "Backend / API",
+    id: "mimi-couture",
+    num: "01",
+    title: "Mimi Couture",
+    type: "Fashion & Dry Cleaning Platform",
     description:
-      "Opinionated Node.js + Express API starter with auth, role-based access, structured error handling, and Jest test suite baked in from day one.",
-    stack: ["Node.js", "Express", "Supabase", "Jest"],
+      "A business management platform for tailoring and dry-cleaning services with pickup scheduling, customer management, order tracking, and service workflows.",
+    stack: ["Next.js", "TypeScript", "Prisma", "MongoDB", "TailwindCSS"],
+    year: "2025",
+  },
+
+  {
+    id: "daily-brief-news",
+    num: "02",
+    title: "Daily Brief News",
+    type: "AI News Application",
+    description:
+      "A modern news platform that delivers concise news summaries, category filtering, search functionality, and mobile-first reading experiences.",
+    stack: ["React Native", "Expo", "TypeScript", "News API", "AI"],
+    year: "2026",
+  },
+
+  {
+    id: "ecommerce",
+    num: "03",
+    title: "E-Commerce Website",
+    type: "Frontend Development",
+    description:
+      "A responsive online shopping experience featuring product listings, product details, reusable UI components, and shopping cart functionality.",
+    stack: ["React", "TypeScript", "TailwindCSS"],
     year: "2024",
   },
+
   {
-    id: "component-system",
-    num: "03",
-    title: "Component System",
-    type: "Design System",
+    id: "gesture-ui",
+    num: "04",
+    title: "Neural Gesture Interface",
+    type: "Computer Vision & AR",
     description:
-      "A shared UI component library for monorepo projects — accessible, typed, theme-aware, and documented. Atomic design from tokens to page templates.",
-    stack: ["React", "MUI", "TailwindCSS", "Storybook"],
-    year: "2024–2025",
+      "A futuristic human-computer interaction system that uses real-time hand tracking, gesture classification, swipe recognition, and 3D visual feedback to control digital interfaces without physical input devices.",
+    stack: [
+      "React",
+      "TypeScript",
+      "MediaPipe Hands",
+      "Three.js",
+      "WebGL",
+      "Computer Vision",
+    ],
+    year: "2026",
+  },
+
+  {
+    id: "portfolio",
+    num: "05",
+    title: "Personal Portfolio Website",
+    type: "Personal Brand",
+    description:
+      "A developer portfolio showcasing projects, skills, and experience with responsive design, smooth interactions, and strong performance optimization.",
+    stack: ["React", "TypeScript", "TailwindCSS"],
+    year: "2025",
   },
 ];
 

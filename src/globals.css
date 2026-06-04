@@ -38,3 +38,18 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: #444;
 }
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.015) 3px
+  );
+
+  pointer-events: none;
+}
