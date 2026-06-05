@@ -6,18 +6,21 @@
 export function BlinkCursor() {
   return (
     <span
-      className="animate-[blink_1.2s_step-end_infinite]"
+      className="animate-[blink_1.2s_step-end_infinite] text-amber-400"
       style={{ animationName: "blink" }}
       aria-hidden="true"
     >
-      _
+      █
     </span>
   );
 }
 
 export function BlinkDot({ className = "" }: { className?: string }) {
   return (
-    <span className={`animate-pulse ${className}`} aria-hidden="true">
+    <span
+      className={`animate-[blink_1.2s_step-end_infinite] ${className}`}
+      aria-hidden="true"
+    >
       ●
     </span>
   );

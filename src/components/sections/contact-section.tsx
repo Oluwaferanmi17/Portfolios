@@ -1,7 +1,5 @@
 "use client";
 
-// components/sections/contact-section.tsx
-
 import { useRef, useState } from "react";
 import { SectionLabel } from "../../components/ui/section-label";
 import { BlinkCursor, BlinkDot } from "../../components/ui/blink-cursor";
@@ -193,7 +191,35 @@ export function ContactSection() {
                   value={form[field.name as keyof FormState]}
                   onChange={handleChange}
                   disabled={status === "sent"}
-                  className="w-full bg-transparent border-none text-neutral-100 font-mono text-[12px] outline-none caret-amber-400 placeholder:text-neutral-700 disabled:opacity-50"
+                  className="
+    w-full
+    h-11
+    px-5
+    rounded-md
+
+    bg-white/[0.03] backdrop-blur-sm
+    border border-white/[0.06]
+
+    text-neutral-300
+    placeholder:text-neutral-700
+
+    font-mono
+    text-[12px]
+    tracking-[0.08em]
+
+    outline-none
+    caret-amber-400
+
+    transition-all
+    duration-200
+
+    focus:border-amber-400/40
+    focus:bg-white/[0.05]
+
+    shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]
+
+    disabled:opacity-50
+  "
                 />
               </div>
             ))}
@@ -213,7 +239,39 @@ export function ContactSection() {
                 value={form.message}
                 onChange={handleChange}
                 disabled={status === "sent"}
-                className="w-full bg-transparent border-none text-neutral-100 font-mono text-[12px] outline-none resize-none caret-amber-400 placeholder:text-neutral-700 disabled:opacity-50"
+                className="     w-full
+      min-h-15
+      px-5
+      py-4
+      rounded-md
+
+      bg-white/[0.03]
+      backdrop-blur-sm
+
+      border border-white/[0.06]
+
+      text-neutral-300
+      placeholder:text-neutral-700
+
+      font-mono
+      text-[12px]
+      tracking-[0.08em]
+      leading-[1.8]
+
+      outline-none
+      resize-none
+
+      caret-amber-400
+
+      transition-all
+      duration-200
+
+      focus:border-amber-400/40
+      focus:bg-white/[0.05]
+
+      shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]
+
+      disabled:opacity-50"
               />
             </div>
 
