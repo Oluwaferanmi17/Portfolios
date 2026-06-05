@@ -2,10 +2,11 @@
 
 // components/sections/contact-section.tsx
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { SectionLabel } from "../../components/ui/section-label";
 import { BlinkCursor, BlinkDot } from "../../components/ui/blink-cursor";
-import { contactLinks, meta } from "../../data/portfolio.data";
+import { contactLinks } from "../../data/portfolio.data";
+import emailjs from "@emailjs/browser";
 
 interface FormState {
   name: string;
@@ -24,6 +25,7 @@ export function ContactSection() {
     message: "",
   });
   const [status, setStatus] = useState<FormStatus>("idle");
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -31,11 +33,42 @@ export function ContactSection() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!form.name || !form.email || !form.message) return;
-    setStatus("sending");
-    // Replace with your actual send logic (e.g. Supabase, Resend, EmailJS)
-    setTimeout(() => setStatus("sent"), 1200);
+
+    try {
+      setStatus("sending");
+
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current!,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+
+      alert("✅ Message sent successfully!");
+
+      formRef.current?.reset();
+
+      setForm({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+      setStatus("sent");
+
+      setTimeout(() => {
+        setStatus("idle");
+      }, 3000);
+    } catch (error) {
+      console.error(error);
+
+      alert("❌ Failed to send message.");
+
+      setStatus("idle");
+    }
   };
 
   const statusText: Record<FormStatus, React.ReactNode> = {
@@ -111,7 +144,15 @@ export function ContactSection() {
         <div>
           <SectionLabel className="mb-6">Send Message</SectionLabel>
 
-          <div className="flex flex-col" role="form" aria-label="Contact form">
+          <form
+            ref={formRef}
+            className="flex flex-col"
+            aria-label="Contact form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSubmit();
+            }}
+          >
             {(
               [
                 {
@@ -181,14 +222,14 @@ export function ContactSection() {
                 {statusText[status]}
               </span>
               <button
-                onClick={handleSubmit}
+                type="submit"
                 disabled={status !== "idle"}
                 className="font-mono text-[10px] tracking-[0.15em] uppercase px-6 py-3 bg-amber-400 text-black transition-colors duration-150 hover:bg-neutral-100 cursor-pointer border-none disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {status === "sending" ? "Transmitting..." : "Transmit →"}
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>

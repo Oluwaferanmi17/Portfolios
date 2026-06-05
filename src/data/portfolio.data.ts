@@ -28,15 +28,15 @@ export const meta = {
   location: "Abuja, Nigeria",
   tagline:
     "I architect and ship things that live on the web. React, Node, TypeScript — structured systems with obsessive attention to detail. Currently building in public.",
-  email: "hello@feranmi.dev",
-  github: "github.com/feranmi",
+  email: "aruajiferanmi@gmail.com",
+  github: "github.com/Oluwaferanmi17",
   buildVersion: "V1.0.0",
 } as const;
 
 export const stats: { value: string; label: string }[] = [
-  { value: "3+", label: "Years Building" },
-  { value: "12+", label: "Projects Shipped" },
-  { value: "8+", label: "Tech Stack" },
+  { value: "4+", label: "Years Building" },
+  { value: "10+", label: "Projects Built" },
+  { value: "10+", label: "Tech Stack" },
   { value: "∞", label: "Commits Made" },
 ];
 
@@ -76,9 +76,10 @@ export const processSteps: { n: string; label: string }[] = [
 ];
 
 export const aboutText: string[] = [
-  "Full-stack developer focused on the intersection of clean architecture and great user experience. I work from first principles — structured planning, disciplined execution, and relentless iteration.",
-  "My methodology (XAWoW) emphasises daily planning, peer review cycles, and validation before shipping. Every project is a monorepo. Every component is documented. Every feature earns its place.",
-  "Currently deep in a personal brand platform, building JSON-driven, no-hardcoding architecture with a suite of analytics, admin dashboards, and modal systems.",
+  "I build software that bridges ideas and execution.",
+  "From booking platforms and business management systems to AI-powered applications and computer vision projects, I enjoy creating products that are both technically robust and genuinely useful. My approach combines structured problem-solving, thoughtful design, and a focus on delivering real value to users.",
+  "I specialize in full-stack development using React, Next.js, TypeScript, Node.js, Prisma, and MongoDB, with growing interests in artificial intelligence, computer vision, and interactive user experiences.",
+  "Every project I build is an opportunity to learn something new, improve a process, or solve a problem more effectively. Whether I'm designing system architecture, developing APIs, or crafting responsive user interfaces, I aim to create software that is reliable, scalable, and enjoyable to use.",
 ];
 
 export const projects: Project[] = [
