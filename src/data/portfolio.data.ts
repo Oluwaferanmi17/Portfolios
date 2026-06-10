@@ -30,7 +30,7 @@ export const meta = {
     "I architect and ship things that live on the web. React, Node, TypeScript — structured systems with obsessive attention to detail. Currently building in public.",
   email: "aruajiferanmi@gmail.com",
   github: "github.com/Oluwaferanmi17",
-  buildVersion: "V1.0.0",
+  buildVersion: "V2.0.0",
 } as const;
 
 export const stats: { value: string; label: string }[] = [
@@ -68,18 +68,18 @@ export const techStack: string[] = [
 ];
 
 export const processSteps: { n: string; label: string }[] = [
-  { n: "01", label: "Plan & map" },
-  { n: "02", label: "Design system" },
-  { n: "03", label: "Implement" },
-  { n: "04", label: "Peer review" },
-  { n: "05", label: "Ship & iterate" },
+  { n: "01", label: "Analyze Problem" },
+  { n: "02", label: "Design Solution" },
+  { n: "03", label: "Build Features" },
+  { n: "04", label: "Test Systems" },
+  { n: "05", label: "Ship Updates" },
 ];
 
 export const aboutText: string[] = [
-  "I build software that bridges ideas and execution.",
-  "From booking platforms and business management systems to AI-powered applications and computer vision projects, I enjoy creating products that are both technically robust and genuinely useful. My approach combines structured problem-solving, thoughtful design, and a focus on delivering real value to users.",
-  "I specialize in full-stack development using React, Next.js, TypeScript, Node.js, Prisma, and MongoDB, with growing interests in artificial intelligence, computer vision, and interactive user experiences.",
-  "Every project I build is an opportunity to learn something new, improve a process, or solve a problem more effectively. Whether I'm designing system architecture, developing APIs, or crafting responsive user interfaces, I aim to create software that is reliable, scalable, and enjoyable to use.",
+  "I’m a full-stack developer who enjoys building useful, scalable software and turning ideas into real products. I work mainly with React, Next.js, TypeScript, Node.js, Prisma, and MongoDB, while also exploring AI and computer vision.",
+  "Outside coding, I’m into comics, tech gadgets, and interactive digital experiences, they inspire a lot of the creativity and curiosity I bring into my projects.",
+  // "I specialize in full-stack development using React, Next.js, TypeScript, Node.js, Prisma, and MongoDB, with growing interests in artificial intelligence, computer vision, and interactive user experiences.",
+  // "Every project I build is an opportunity to learn something new, improve a process, or solve a problem more effectively. Whether I'm designing system architecture, developing APIs, or crafting responsive user interfaces, I aim to create software that is reliable, scalable, and enjoyable to use.",
 ];
 
 export const projects: Project[] = [

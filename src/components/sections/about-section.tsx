@@ -10,6 +10,7 @@ import {
   meta,
 } from "../../data/portfolio.data";
 
+import PortfolioImage from "../../assets/Porfolio.png";
 export function AboutSection() {
   return (
     <section
@@ -29,7 +30,7 @@ export function AboutSection() {
             aria-hidden="true"
           >
             <img
-              src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=400&q=80&fit=crop"
+              src={PortfolioImage}
               alt={`${meta.name} — developer portrait`}
               className="w-full h-full object-cover grayscale contrast-110 opacity-80"
               style={{ mixBlendMode: "luminosity" }}
